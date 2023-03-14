@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="dao" class="ma.Simula.Dao.DaoVolatile.CreditDao">
+
+    </bean>
+    <bean id="metier" class="ma.Simula.Metier.CreditMetier">
+        <property name="CreditDao" ref="dao"></property>
+    </bean>
+
+    <bean id="controleur" class="ma.Simula.Prentation.CreditControleur">
+        <property name="CreditMetier" ref="metier"></property>
+    </bean>
+</beans>
